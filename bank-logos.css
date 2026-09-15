@@ -1,0 +1,40 @@
+/* turkish-bank-logos-svg — scripts/build.mjs tarafından üretildi, elle düzenlemeyin.
+   Kullanım: <span class="bank-logo bank-logo--garanti" role="img" aria-label="Garanti BBVA"></span>
+   Yükseklik 24px; değiştirmek için .bank-logo{height:…}. Genişlik logonun oranından gelir. */
+.bank-logo{display:inline-block;height:24px;vertical-align:middle;background:center/contain no-repeat}
+.bank-logo--akbank{aspect-ratio:250/28;background-image:url("svg/akbank.svg")}
+.bank-logo--aktifbank{aspect-ratio:232.12/56;background-image:url("svg/aktifbank.svg")}
+.bank-logo--albaraka{aspect-ratio:805.28/241.01;background-image:url("svg/albaraka.svg")}
+.bank-logo--alternatifbank{aspect-ratio:177.47/64.02;background-image:url("svg/alternatifbank.svg")}
+.bank-logo--anadolubank{aspect-ratio:214/30;background-image:url("svg/anadolubank.svg")}
+.bank-logo--atbank{aspect-ratio:251.78/75.45;background-image:url("svg/atbank.svg")}
+.bank-logo--burgan{aspect-ratio:146.28/50.07;background-image:url("svg/burgan.svg")}
+.bank-logo--citibank{aspect-ratio:300/81.234;background-image:url("svg/citibank.svg")}
+.bank-logo--denizbank{aspect-ratio:183/32;background-image:url("svg/denizbank.svg")}
+.bank-logo--dunyakatilim{aspect-ratio:457/97;background-image:url("svg/dunyakatilim.svg")}
+.bank-logo--emlakkatilim{aspect-ratio:269.6/53.8;background-image:url("svg/emlakkatilim.svg")}
+.bank-logo--enpara{aspect-ratio:127/45;background-image:url("svg/enpara.svg")}
+.bank-logo--fibabanka{aspect-ratio:265.39/52.06;background-image:url("svg/fibabanka.svg")}
+.bank-logo--freedombank{aspect-ratio:1500/337;background-image:url("svg/freedombank.svg")}
+.bank-logo--garanti{aspect-ratio:389.23/68.89;background-image:url("svg/garanti.svg")}
+.bank-logo--goldenglobal{aspect-ratio:110.8/67.2;background-image:url("svg/goldenglobal.svg")}
+.bank-logo--halkbank{aspect-ratio:560/108.5;background-image:url("svg/halkbank.svg")}
+.bank-logo--hayatfinans{aspect-ratio:132.05/48;background-image:url("svg/hayatfinans.svg")}
+.bank-logo--hsbc{aspect-ratio:708.661/124.917;background-image:url("svg/hsbc.svg")}
+.bank-logo--icbc{aspect-ratio:31.868/10.544;background-image:url("svg/icbc.svg")}
+.bank-logo--ing{aspect-ratio:999.43/152.57;background-image:url("svg/ing.svg")}
+.bank-logo--ininal{aspect-ratio:312.22/141.87;background-image:url("svg/ininal.svg")}
+.bank-logo--isbank{aspect-ratio:157.403/49.418;background-image:url("svg/isbank.svg")}
+.bank-logo--kuveytturk{aspect-ratio:227/41;background-image:url("svg/kuveytturk.svg")}
+.bank-logo--nkolay{aspect-ratio:1000/336.29;background-image:url("svg/nkolay.svg")}
+.bank-logo--odeabank{aspect-ratio:129/24;background-image:url("svg/odeabank.svg")}
+.bank-logo--papara{aspect-ratio:707.8/170.17;background-image:url("svg/papara.svg")}
+.bank-logo--qnb{aspect-ratio:1550/452;background-image:url("svg/qnb.svg")}
+.bank-logo--sekerbank{aspect-ratio:189.767/35.142;background-image:url("svg/sekerbank.svg")}
+.bank-logo--teb{aspect-ratio:180.03/82.94;background-image:url("svg/teb.svg")}
+.bank-logo--turkiyefinans{aspect-ratio:945.95/216.45;background-image:url("svg/turkiyefinans.svg")}
+.bank-logo--vakifbank{aspect-ratio:149.419/18.054;background-image:url("svg/vakifbank.svg")}
+.bank-logo--vakifkatilim{aspect-ratio:216/48;background-image:url("svg/vakifkatilim.svg")}
+.bank-logo--yapikredi{aspect-ratio:194.563/34;background-image:url("svg/yapikredi.svg")}
+.bank-logo--ziraat{aspect-ratio:627.99/132.67;background-image:url("svg/ziraat.svg")}
+.bank-logo--ziraatkatilim{aspect-ratio:282.914/60.517;background-image:url("svg/ziraatkatilim.svg")}
