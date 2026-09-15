@@ -2,7 +2,7 @@
 
 **Turkish bank & payment institution logos in SVG** · [English below](#english)
 
-Türkiye'deki 34 banka ve 4 ödeme / elektronik para kuruluşunun **orijinal**
+Türkiye'deki 35 banka ve 4 ödeme / elektronik para kuruluşunun **orijinal**
 logoları, SVG biçiminde. Hiçbiri elle çizilmedi: her dosya aşağıda yazan
 kaynaktan alındı, render edilip gözle doğrulandı ve web'de doğrudan
 kullanılacak şekilde normalleştirildi. (Tek istisna Freedom Bank: raster bir
@@ -11,7 +11,7 @@ logodan otomatik vektörleştirildi — bkz. not.)
 Logolar [Domainhizmetleri](https://www.domainhizmetleri.com)'nin kartla ödeme
 ekranında, kartın hangi bankaya ait olduğunu göstermek için toplandı.
 
-![Önizleme — 38 logo](preview.png)
+![Önizleme — 39 logo](preview.png)
 
 ## Kullanım
 
@@ -66,7 +66,7 @@ findBankSlug('TOSLA');                     // null
 
 Eşleştirici katılım bankalarını ana bankadan (Ziraat Katılım / Ziraat, Vakıf
 Katılım / VakıfBank) ve başka adların içinde geçen kısa adları (`teb`, `abank`)
-ayırır. Sınama 50 durumla yapılıyor: 46 gerçek ad biçimi ve eşleşmemesi gereken
+ayırır. Sınama 52 durumla yapılıyor: 48 gerçek ad biçimi ve eşleşmemesi gereken
 4 durum ([`test/`](test/index.test.mjs)).
 
 npm ile: `npm install github:murattahtaci/turkish-bank-logos-svg`
@@ -87,7 +87,7 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 
 ## Dosyalar ve kaynaklar
 
-### Bankalar (34)
+### Bankalar (35)
 
 | Dosya | Kurum | Kaynak | Lisans |
 |---|---|---|---|
@@ -119,6 +119,7 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `qnb.svg` | QNB | Wikimedia Commons · *QNB Logo.svg* | Kamu malı |
 | `sekerbank.svg` | Şekerbank | Wikimedia Commons · *Şekerbank logo.svg* | Kamu malı |
 | `teb.svg` | TEB | seeklogo (EPS → SVG) | Kurumun marka varlığı |
+| `terabank.svg` | Tera Bank (Tera Yatırım Bankası) | kurumun web sitesi | Kurumun marka varlığı |
 | `turkiyefinans.svg` | Türkiye Finans Katılım | kurumun basın odası (AI) | Kurumun marka varlığı |
 | `vakifbank.svg` | VakıfBank | Wikimedia Commons · *Vakıfbank logo.svg* | Kamu malı |
 | `vakifkatilim.svg` | Vakıf Katılım | Wikimedia Commons · *Vakıf Katılım Logo.svg* | Kamu malı |
@@ -182,7 +183,7 @@ Depo ayrıca bir lisans vermez; her dosyanın lisansı yukarıdaki tabloda yazı
 
 ## English
 
-Original SVG logos of **34 banks and 4 payment / e-money institutions in Turkey**, collected
+Original SVG logos of **35 banks and 4 payment / e-money institutions in Turkey**, collected
 for the card payment screen of [Domainhizmetleri](https://www.domainhizmetleri.com)
 to show which bank a card belongs to.
 
@@ -202,7 +203,7 @@ to show which bank a card belongs to.
 - **Live examples:** [murattahtaci.github.io/turkish-bank-logos-svg/examples](https://murattahtaci.github.io/turkish-bank-logos-svg/examples/)
 - **Machine-readable list:** [`logos.json`](logos.json)
 - **Licenses per file:** 20 public domain (Wikimedia Commons), 1 CC BY-SA 4.0
-  (A&T Bank — attribute and share alike), 17 trademark assets of the institution.
+  (A&T Bank — attribute and share alike), 18 trademark assets of the institution.
 - **Missing:** Tosla — pull requests welcome.
 
 **Trademark notice:** these logos are registered trademarks of their owners.

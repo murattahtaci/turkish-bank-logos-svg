@@ -321,6 +321,16 @@ export default [
     "license": "trademark"
   },
   {
+    "slug": "terabank",
+    "name": "Tera Bank (Tera Yatırım Bankası)",
+    "type": "bank",
+    "file": "svg/terabank.svg",
+    "width": 238,
+    "height": 24,
+    "source": "kurumun web sitesi",
+    "license": "trademark"
+  },
+  {
     "slug": "turkiyefinans",
     "name": "Türkiye Finans Katılım",
     "type": "bank",

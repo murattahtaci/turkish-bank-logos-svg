@@ -26,6 +26,8 @@ export const MATCH = [
   ['hayatfinans', 'hayatfinans'],
   ['dunyakatilim', 'dunyakatilim'],
   ['goldenglobal', 'goldenglobal'],
+  ['terabank', 'terabank'],
+  ['terayatirim', 'terabank'],
   // mevduat bankaları ve e-para kuruluşları
   ['ziraatbankasi', 'ziraat'],
   ['tcziraat', 'ziraat'],

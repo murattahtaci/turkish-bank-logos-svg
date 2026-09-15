@@ -1,7 +1,7 @@
 {
   "name": "turkish-bank-logos-svg",
   "version": "1.0.0",
-  "description": "Original SVG logos of 34 banks and 4 payment / e-money institutions in Turkey, with CSS classes and a bank-name matcher.",
+  "description": "Original SVG logos of 35 banks and 4 payment / e-money institutions in Turkey, with CSS classes and a bank-name matcher.",
   "type": "module",
   "main": "index.js",
   "exports": {

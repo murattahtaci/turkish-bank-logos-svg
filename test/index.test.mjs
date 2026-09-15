@@ -57,6 +57,8 @@ const ADLAR = [
   ['HAYAT FİNANS KATILIM BANKASI A.Ş.', 'hayatfinans'],
   ['DÜNYA KATILIM BANKASI A.Ş.', 'dunyakatilim'],
   ['GOLDEN GLOBAL YATIRIM BANKASI A.Ş.', 'goldenglobal'],
+  ['TERA YATIRIM BANKASI A.Ş.', 'terabank'],
+  ['TERA BANK', 'terabank'],
   // eşleşmemesi gerekenler: logo yok, adı yazılır
   ['TOSLA', null],
   ['GETİR FİNANS', 'getirfinans'],
@@ -88,11 +90,11 @@ test('her eşleme hedefinin logosu var', () => {
   for (const [parca, slug] of MATCH) assert.ok(slugs.has(slug), `${parca} → ${slug}: logo yok`);
 });
 
-test('svg/, logos.json, logos.js ve README tabloları aynı 38 logoyu anlatıyor', () => {
+test('svg/, logos.json, logos.js ve README tabloları aynı 39 logoyu anlatıyor', () => {
   const dosyalar = readdirSync(join(root, 'svg')).filter(f => f.endsWith('.svg')).map(f => f.slice(0, -4)).sort();
   const json = JSON.parse(readFileSync(join(root, 'logos.json'), 'utf8'));
   const readme = [...readFileSync(join(root, 'README.md'), 'utf8').matchAll(/^\| `([a-z0-9]+)\.svg` \|/gm)].map(m => m[1]).sort();
-  assert.equal(dosyalar.length, 38);
+  assert.equal(dosyalar.length, 39);
   assert.deepEqual(json.map(l => l.slug).sort(), dosyalar);
   assert.deepEqual(logos.map(l => l.slug).sort(), dosyalar);
   assert.deepEqual(readme, dosyalar);
