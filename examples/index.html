@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Türkiye banka logoları — örnekler</title>
+<title>Türkiye banka ve ödeme kuruluşu logoları — örnekler</title>
 <link rel="stylesheet" href="../bank-logos.css">
 <style>
   body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 auto;max-width:960px;padding:24px 16px;color:#1f2328}
   h1{font-size:24px;margin:0 0 4px} h2{font-size:18px;margin:36px 0 8px}
+  h3{font-size:14px;margin:22px 0 8px;color:#57606a;font-weight:600}
   a{color:#0969da}
   code,pre{font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;background:#f6f8fa;border-radius:6px}
   code{padding:1px 5px} pre{padding:12px;overflow:auto}
@@ -21,8 +22,8 @@
 </style>
 </head>
 <body>
-<h1>Türkiye banka logoları — örnekler</h1>
-<p>36 banka ve e-para kuruluşunun orijinal SVG logoları, üç kullanım biçimiyle. Kaynaklar, lisanslar ve marka uyarısı:
+<h1>Türkiye banka ve ödeme kuruluşu logoları — örnekler</h1>
+<p>34 banka ve 4 ödeme / elektronik para kuruluşunun orijinal SVG logoları, üç kullanım biçimiyle. Kaynaklar, lisanslar ve marka uyarısı:
 <a href="https://github.com/murattahtaci/turkish-bank-logos-svg">github.com/murattahtaci/turkish-bank-logos-svg</a></p>
 
 <h2>1. <code>&lt;img&gt;</code></h2>
@@ -33,7 +34,10 @@
 <pre>&lt;link rel="stylesheet" href="bank-logos.css"&gt;
 &lt;span class="bank-logo bank-logo--garanti" role="img" aria-label="Garanti BBVA"&gt;&lt;/span&gt;</pre>
 <p>Yükseklik 24 px; <code>.bank-logo{height:32px}</code> ile değişir. Genişlik logonun kendi oranından gelir.</p>
-<div class="grid" id="grid"></div>
+<h3>Bankalar</h3>
+<div class="grid" id="grid-bank"></div>
+<h3>Ödeme ve elektronik para kuruluşları</h3>
+<div class="grid" id="grid-payment"></div>
 
 <h2>3. JS — banka adından logo</h2>
 <pre>import { findBankSlug, bankLogoUrl } from './index.js';
@@ -50,7 +54,6 @@ findBankSlug('TOSLA');                    // null — logo yok, adı yazın</pre
 <script type="module">
 import { logos, findBankSlug, bankLogoUrl } from '../index.js';
 
-const grid = document.getElementById('grid');
 for (const l of logos) {
   const hucre = document.createElement('div');
   hucre.className = 'cell';
@@ -59,7 +62,7 @@ for (const l of logos) {
   logo.setAttribute('role', 'img');
   logo.setAttribute('aria-label', l.name);
   hucre.append(logo, l.slug);
-  grid.append(hucre);
+  document.getElementById('grid-' + l.type).append(hucre);
 }
 
 const ad = document.getElementById('ad');

@@ -62,6 +62,8 @@ export const MATCH = [
   ['turkishbank', 'freedombank'], // 2026'da Freedom Bank oldu
   ['papara', 'papara'],
   ['ininal', 'ininal'],
+  ['getirfinans', 'getirfinans'],
+  ['iyzi', 'iyzico'], // iyzico'nun kendi BIN sorgusu "iyzico", BIN veri tabanları "İyzi Ödeme ve Elektronik Para…" diyor
   // kısa anahtarlar EN SONDA
   ['atbank', 'atbank'],
   ['abank', 'alternatifbank'],

@@ -3,6 +3,7 @@ export default [
   {
     "slug": "akbank",
     "name": "Akbank",
+    "type": "bank",
     "file": "svg/akbank.svg",
     "width": 250,
     "height": 28,
@@ -12,6 +13,7 @@ export default [
   {
     "slug": "aktifbank",
     "name": "Aktif Bank",
+    "type": "bank",
     "file": "svg/aktifbank.svg",
     "width": 232.12,
     "height": 56,
@@ -21,6 +23,7 @@ export default [
   {
     "slug": "albaraka",
     "name": "Albaraka Türk",
+    "type": "bank",
     "file": "svg/albaraka.svg",
     "width": 805.28,
     "height": 241.01,
@@ -30,6 +33,7 @@ export default [
   {
     "slug": "alternatifbank",
     "name": "Alternatif Bank",
+    "type": "bank",
     "file": "svg/alternatifbank.svg",
     "width": 177.47,
     "height": 64.02,
@@ -39,6 +43,7 @@ export default [
   {
     "slug": "anadolubank",
     "name": "Anadolubank",
+    "type": "bank",
     "file": "svg/anadolubank.svg",
     "width": 214,
     "height": 30,
@@ -48,6 +53,7 @@ export default [
   {
     "slug": "atbank",
     "name": "Arap Türk Bankası (A&T Bank)",
+    "type": "bank",
     "file": "svg/atbank.svg",
     "width": 251.78,
     "height": 75.45,
@@ -57,6 +63,7 @@ export default [
   {
     "slug": "burgan",
     "name": "Burgan Bank",
+    "type": "bank",
     "file": "svg/burgan.svg",
     "width": 146.28,
     "height": 50.07,
@@ -66,6 +73,7 @@ export default [
   {
     "slug": "citibank",
     "name": "Citibank",
+    "type": "bank",
     "file": "svg/citibank.svg",
     "width": 300,
     "height": 81.234,
@@ -75,6 +83,7 @@ export default [
   {
     "slug": "denizbank",
     "name": "DenizBank",
+    "type": "bank",
     "file": "svg/denizbank.svg",
     "width": 183,
     "height": 32,
@@ -84,6 +93,7 @@ export default [
   {
     "slug": "dunyakatilim",
     "name": "Dünya Katılım",
+    "type": "bank",
     "file": "svg/dunyakatilim.svg",
     "width": 457,
     "height": 97,
@@ -93,6 +103,7 @@ export default [
   {
     "slug": "emlakkatilim",
     "name": "Türkiye Emlak Katılım",
+    "type": "bank",
     "file": "svg/emlakkatilim.svg",
     "width": 269.6,
     "height": 53.8,
@@ -102,6 +113,7 @@ export default [
   {
     "slug": "enpara",
     "name": "Enpara",
+    "type": "bank",
     "file": "svg/enpara.svg",
     "width": 127,
     "height": 45,
@@ -111,6 +123,7 @@ export default [
   {
     "slug": "fibabanka",
     "name": "Fibabanka",
+    "type": "bank",
     "file": "svg/fibabanka.svg",
     "width": 265.39,
     "height": 52.06,
@@ -120,15 +133,17 @@ export default [
   {
     "slug": "freedombank",
     "name": "Freedom Bank (eski Turkish Bank)",
+    "type": "bank",
     "file": "svg/freedombank.svg",
-    "width": 1500,
-    "height": 337,
-    "source": "kurumun marka dosyası",
+    "width": 1200,
+    "height": 361,
+    "source": "raster logodan otomatik vektörleştirme (VTracer)",
     "license": "trademark"
   },
   {
     "slug": "garanti",
     "name": "Garanti BBVA",
+    "type": "bank",
     "file": "svg/garanti.svg",
     "width": 389.23,
     "height": 68.89,
@@ -136,8 +151,19 @@ export default [
     "license": "public-domain"
   },
   {
+    "slug": "getirfinans",
+    "name": "Getir Finans (e-para)",
+    "type": "payment",
+    "file": "svg/getirfinans.svg",
+    "width": 124,
+    "height": 24,
+    "source": "kurumun web sitesi (satır içi SVG)",
+    "license": "trademark"
+  },
+  {
     "slug": "goldenglobal",
     "name": "Golden Global Yatırım Bankası",
+    "type": "bank",
     "file": "svg/goldenglobal.svg",
     "width": 110.8,
     "height": 67.2,
@@ -147,6 +173,7 @@ export default [
   {
     "slug": "halkbank",
     "name": "Halkbank",
+    "type": "bank",
     "file": "svg/halkbank.svg",
     "width": 560,
     "height": 108.5,
@@ -156,6 +183,7 @@ export default [
   {
     "slug": "hayatfinans",
     "name": "Hayat Finans Katılım",
+    "type": "bank",
     "file": "svg/hayatfinans.svg",
     "width": 132.05,
     "height": 48,
@@ -165,6 +193,7 @@ export default [
   {
     "slug": "hsbc",
     "name": "HSBC",
+    "type": "bank",
     "file": "svg/hsbc.svg",
     "width": 708.661,
     "height": 124.917,
@@ -174,6 +203,7 @@ export default [
   {
     "slug": "icbc",
     "name": "ICBC Turkey",
+    "type": "bank",
     "file": "svg/icbc.svg",
     "width": 31.868,
     "height": 10.544,
@@ -183,6 +213,7 @@ export default [
   {
     "slug": "ing",
     "name": "ING Bank",
+    "type": "bank",
     "file": "svg/ing.svg",
     "width": 999.43,
     "height": 152.57,
@@ -192,6 +223,7 @@ export default [
   {
     "slug": "ininal",
     "name": "ininal (e-para)",
+    "type": "payment",
     "file": "svg/ininal.svg",
     "width": 312.22,
     "height": 141.87,
@@ -201,6 +233,7 @@ export default [
   {
     "slug": "isbank",
     "name": "Türkiye İş Bankası",
+    "type": "bank",
     "file": "svg/isbank.svg",
     "width": 157.403,
     "height": 49.418,
@@ -208,8 +241,19 @@ export default [
     "license": "public-domain"
   },
   {
+    "slug": "iyzico",
+    "name": "iyzico (ödeme ve e-para)",
+    "type": "payment",
+    "file": "svg/iyzico.svg",
+    "width": 108,
+    "height": 38,
+    "source": "kurumun marka dosyası (\"Beyaz Zeminde Kullanım\")",
+    "license": "trademark"
+  },
+  {
     "slug": "kuveytturk",
     "name": "Kuveyt Türk",
+    "type": "bank",
     "file": "svg/kuveytturk.svg",
     "width": 227,
     "height": 41,
@@ -219,6 +263,7 @@ export default [
   {
     "slug": "nkolay",
     "name": "N Kolay (Aktif Bank)",
+    "type": "bank",
     "file": "svg/nkolay.svg",
     "width": 1000,
     "height": 336.29,
@@ -228,6 +273,7 @@ export default [
   {
     "slug": "odeabank",
     "name": "Odeabank",
+    "type": "bank",
     "file": "svg/odeabank.svg",
     "width": 129,
     "height": 24,
@@ -237,6 +283,7 @@ export default [
   {
     "slug": "papara",
     "name": "Papara (e-para)",
+    "type": "payment",
     "file": "svg/papara.svg",
     "width": 707.8,
     "height": 170.17,
@@ -246,6 +293,7 @@ export default [
   {
     "slug": "qnb",
     "name": "QNB",
+    "type": "bank",
     "file": "svg/qnb.svg",
     "width": 1550,
     "height": 452,
@@ -255,6 +303,7 @@ export default [
   {
     "slug": "sekerbank",
     "name": "Şekerbank",
+    "type": "bank",
     "file": "svg/sekerbank.svg",
     "width": 189.767,
     "height": 35.142,
@@ -264,6 +313,7 @@ export default [
   {
     "slug": "teb",
     "name": "TEB",
+    "type": "bank",
     "file": "svg/teb.svg",
     "width": 180.03,
     "height": 82.94,
@@ -273,6 +323,7 @@ export default [
   {
     "slug": "turkiyefinans",
     "name": "Türkiye Finans Katılım",
+    "type": "bank",
     "file": "svg/turkiyefinans.svg",
     "width": 945.95,
     "height": 216.45,
@@ -282,6 +333,7 @@ export default [
   {
     "slug": "vakifbank",
     "name": "VakıfBank",
+    "type": "bank",
     "file": "svg/vakifbank.svg",
     "width": 149.419,
     "height": 18.054,
@@ -291,6 +343,7 @@ export default [
   {
     "slug": "vakifkatilim",
     "name": "Vakıf Katılım",
+    "type": "bank",
     "file": "svg/vakifkatilim.svg",
     "width": 216,
     "height": 48,
@@ -300,6 +353,7 @@ export default [
   {
     "slug": "yapikredi",
     "name": "Yapı Kredi",
+    "type": "bank",
     "file": "svg/yapikredi.svg",
     "width": 194.563,
     "height": 34,
@@ -309,6 +363,7 @@ export default [
   {
     "slug": "ziraat",
     "name": "Ziraat Bankası",
+    "type": "bank",
     "file": "svg/ziraat.svg",
     "width": 627.99,
     "height": 132.67,
@@ -318,6 +373,7 @@ export default [
   {
     "slug": "ziraatkatilim",
     "name": "Ziraat Katılım",
+    "type": "bank",
     "file": "svg/ziraatkatilim.svg",
     "width": 282.914,
     "height": 60.517,

@@ -25,7 +25,8 @@ const sonuc = logos.map(l => {
   if (!m) { console.error(`${l.slug}.svg: kökte viewBox yok`); process.exit(1); }
   const width = yuvarla(+m[3]), height = yuvarla(+m[4]);
   if (!(width > 0 && height > 0)) { console.error(`${l.slug}.svg: geçersiz viewBox`); process.exit(1); }
-  return { slug: l.slug, name: l.name, file: `svg/${l.slug}.svg`, width, height, source: l.source, license: l.license };
+  if (!['bank', 'payment'].includes(l.type)) { console.error(`${l.slug}: tür (type) 'bank' ya da 'payment' olmalı`); process.exit(1); }
+  return { slug: l.slug, name: l.name, type: l.type, file: `svg/${l.slug}.svg`, width, height, source: l.source, license: l.license };
 }).sort((a, b) => a.slug.localeCompare(b.slug));
 
 writeFileSync(join(root, 'logos.json'), JSON.stringify(sonuc, null, 2) + '\n');
