@@ -331,6 +331,16 @@ export default [
     "license": "trademark"
   },
   {
+    "slug": "tosla",
+    "name": "Tosla (e-para)",
+    "type": "payment",
+    "file": "svg/tosla.svg",
+    "width": 100,
+    "height": 38,
+    "source": "kurumun web sitesi",
+    "license": "trademark"
+  },
+  {
     "slug": "turkiyefinans",
     "name": "Türkiye Finans Katılım",
     "type": "bank",

@@ -3,7 +3,7 @@
 //   import { findBankSlug, bankLogoUrl } from 'turkish-bank-logos-svg';
 //   findBankSlug('T. GARANTİ BANKASI A.Ş.')  // 'garanti'
 //   bankLogoUrl('T. GARANTİ BANKASI A.Ş.')   // '.../svg/garanti.svg'
-//   findBankSlug('TOSLA')                    // null — logo yok, adı yazın
+//   findBankSlug('BİLİNMEYEN BANKA')                    // null — logo yok, adı yazın
 import logos from './logos.js';
 
 export { logos };
@@ -66,6 +66,7 @@ export const MATCH = [
   ['ininal', 'ininal'],
   ['getirfinans', 'getirfinans'],
   ['iyzi', 'iyzico'], // iyzico'nun kendi BIN sorgusu "iyzico", BIN veri tabanları "İyzi Ödeme ve Elektronik Para…" diyor
+  ['tosla', 'tosla'],
   // kısa anahtarlar EN SONDA
   ['atbank', 'atbank'],
   ['abank', 'alternatifbank'],

@@ -2,7 +2,7 @@
 
 **Turkish bank & payment institution logos in SVG** · [English below](#english)
 
-Türkiye'deki 35 banka ve 4 ödeme / elektronik para kuruluşunun **orijinal**
+Türkiye'deki 35 banka ve 5 ödeme / elektronik para kuruluşunun **orijinal**
 logoları, SVG biçiminde. Hiçbiri elle çizilmedi: her dosya aşağıda yazan
 kaynaktan alındı, render edilip gözle doğrulandı ve web'de doğrudan
 kullanılacak şekilde normalleştirildi. (Tek istisna Freedom Bank: raster bir
@@ -11,7 +11,7 @@ logodan otomatik vektörleştirildi — bkz. not.)
 Logolar [Domainhizmetleri](https://www.domainhizmetleri.com)'nin kartla ödeme
 ekranında, kartın hangi bankaya ait olduğunu göstermek için toplandı.
 
-![Önizleme — 39 logo](preview.png)
+![Önizleme — 40 logo](preview.png)
 
 ## Kullanım
 
@@ -61,13 +61,13 @@ import { findBankSlug, bankLogoUrl } from 'https://cdn.jsdelivr.net/gh/murattaht
 findBankSlug('T. GARANTİ BANKASI A.Ş.');   // 'garanti'
 findBankSlug('ZİRAAT KATILIM BANKASI A.Ş.'); // 'ziraatkatilim' (Ziraat Bankası değil)
 bankLogoUrl('T. GARANTİ BANKASI A.Ş.');    // '…/svg/garanti.svg'
-findBankSlug('TOSLA');                     // null
+findBankSlug('BİLİNMEYEN BANKA A.Ş.');                     // null
 ```
 
 Eşleştirici katılım bankalarını ana bankadan (Ziraat Katılım / Ziraat, Vakıf
 Katılım / VakıfBank) ve başka adların içinde geçen kısa adları (`teb`, `abank`)
-ayırır. Sınama 52 durumla yapılıyor: 48 gerçek ad biçimi ve eşleşmemesi gereken
-4 durum ([`test/`](test/index.test.mjs)).
+ayırır. Sınama 52 durumla yapılıyor: 49 gerçek ad biçimi ve eşleşmemesi gereken
+3 durum ([`test/`](test/index.test.mjs)).
 
 npm ile: `npm install github:murattahtaci/turkish-bank-logos-svg`
 
@@ -127,7 +127,7 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `ziraat.svg` | Ziraat Bankası | Wikimedia Commons · *Ziraat Bankası logo.svg* | Kamu malı |
 | `ziraatkatilim.svg` | Ziraat Katılım | Wikimedia Commons · *Ziraat Katılım Bankası Logo.svg* | Kamu malı |
 
-### Ödeme ve elektronik para kuruluşları (4)
+### Ödeme ve elektronik para kuruluşları (5)
 
 | Dosya | Kurum | Kaynak | Lisans |
 |---|---|---|---|
@@ -135,6 +135,7 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `ininal.svg` | ininal (e-para) | seeklogo (EPS → SVG) | Kurumun marka varlığı |
 | `iyzico.svg` | iyzico (ödeme ve e-para) | kurumun marka dosyası ("Beyaz Zeminde Kullanım") | Kurumun marka varlığı |
 | `papara.svg` | Papara (e-para) | seeklogo | Kurumun marka varlığı |
+| `tosla.svg` | Tosla (e-para) | kurumun web sitesi | Kurumun marka varlığı |
 
 Commons lisansları Commons API'sinden okundu (2026-09-15). "Kamu malı" olanların
 çoğu Commons'ta ayrıca **tescilli marka** olarak işaretli.
@@ -154,11 +155,11 @@ Commons lisansları Commons API'sinden okundu (2026-09-15). "Kamu malı" olanlar
   Elektronik Para Hizmetleri A.Ş."); eşleştirici ikisini de `iyzico`'ya çevirir.
   Kaynak: [iyzico dökümanı](https://docs.iyzico.com/odeme-metotlari/api/non-3ds/non-3ds-entegrasyonu).
 
-## Eksikler — katkıya açık
+## Katkı
 
-**Tosla** için SVG bulunamadı: kendi sitesi raster (PNG/JPG) logo basıyor.
-Kurumun kendi sitesinden ya da marka kitinden bir SVG bulursanız pull request
-açabilirsiniz — kaynağını tabloya ekleyerek.
+Listede olmayan bir banka ya da ödeme kuruluşunun SVG logosunu (kurumun kendi
+sitesinden ya da marka kitinden) bulursanız pull request açabilirsiniz —
+kaynağını tabloya ekleyerek.
 
 Yeni bir logo eklerken: dosya `svg/` altına, kaydı (türüyle: `bank` ya da
 `payment`) `logos.json`'a, satırı ilgili tabloya; kurum adının eşleşmesi
@@ -183,7 +184,7 @@ Depo ayrıca bir lisans vermez; her dosyanın lisansı yukarıdaki tabloda yazı
 
 ## English
 
-Original SVG logos of **35 banks and 4 payment / e-money institutions in Turkey**, collected
+Original SVG logos of **35 banks and 5 payment / e-money institutions in Turkey**, collected
 for the card payment screen of [Domainhizmetleri](https://www.domainhizmetleri.com)
 to show which bank a card belongs to.
 
@@ -203,8 +204,8 @@ to show which bank a card belongs to.
 - **Live examples:** [murattahtaci.github.io/turkish-bank-logos-svg/examples](https://murattahtaci.github.io/turkish-bank-logos-svg/examples/)
 - **Machine-readable list:** [`logos.json`](logos.json)
 - **Licenses per file:** 20 public domain (Wikimedia Commons), 1 CC BY-SA 4.0
-  (A&T Bank — attribute and share alike), 18 trademark assets of the institution.
-- **Missing:** Tosla — pull requests welcome.
+  (A&T Bank — attribute and share alike), 19 trademark assets of the institution.
+- **Contributions:** a bank or payment institution missing? Pull requests welcome.
 
 **Trademark notice:** these logos are registered trademarks of their owners.
 This repository only collects and prepares the files; it grants no rights to any
