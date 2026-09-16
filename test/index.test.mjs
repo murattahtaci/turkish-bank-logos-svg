@@ -72,6 +72,22 @@ const ADLAR = [
   ['odea bank', 'odeabank'],
   ['alternatif bank', 'alternatifbank'],
   ['ABANK', 'alternatifbank'],
+  // kısa yazımlar: MATCH boş dönünce slug/ad ön eki yedeği devreye girer
+  ['ing', 'ing'],
+  ['halk', 'halkbank'],
+  ['deniz', 'denizbank'],
+  ['fiba', 'fibabanka'],
+  ['odea', 'odeabank'],
+  ['seker', 'sekerbank'],
+  ['kuveyt', 'kuveytturk'],
+  ['alternatif', 'alternatifbank'],
+  ['burgan', 'burgan'],
+  ['isbank', 'isbank'],
+  ['vakif', null], // iki aday (VakıfBank / Vakıf Katılım) — bilerek boş
+  // ön ek yedeğinin yanlış pozitif vermediği kontrol girdileri ("ing" içlerinde geçiyor)
+  ['ABC Holding A.Ş.', null],
+  ['XYZ Leasing A.Ş.', null],
+  ['Mega Factoring A.Ş.', null],
   // eşleşmemesi gerekenler: logo yok, adı yazılır
   ['TOSLA', 'tosla'],
   ['GETİR FİNANS', 'getirfinans'],

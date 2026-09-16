@@ -109,8 +109,19 @@ export function findBankSlug(name) {
       en = { slug, uzunluk: part.length, yer };
     }
   }
-  if (!en) return null;
-  return SLUGS.has(en.slug) ? en.slug : null;
+  if (en) return SLUGS.has(en.slug) ? en.slug : null;
+
+  // Yedek — kullanıcı kısa yazmış olabilir ("ing", "halk", "deniz"). Girdi bir slug'ın ya da
+  // kurum adının ÖN EKİ ise ve tek aday varsa onu veririz. Ön ek şartı bilerek dar: "ABC
+  // Holding A.Ş." içinde "ing" geçer ama hiçbir slug'ın öneki değildir, o yüzden eşleşmez.
+  // Birden fazla aday varsa ("vakif" → VakıfBank / Vakıf Katılım) boş döner: yanlış logo
+  // göstermektense adı yazmak doğru davranış.
+  if (n.length < 3) return null;
+  const adaylar = new Set();
+  for (const l of logos) {
+    if (l.slug.startsWith(n) || normalizeBankName(l.name).startsWith(n)) adaylar.add(l.slug);
+  }
+  return adaylar.size === 1 ? [...adaylar][0] : null;
 }
 
 const DEFAULT_BASE = new URL('./svg/', import.meta.url).href;
