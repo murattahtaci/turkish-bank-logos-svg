@@ -194,10 +194,10 @@
     "name": "HSBC",
     "type": "bank",
     "file": "svg/hsbc.svg",
-    "width": 708.661,
-    "height": 124.917,
-    "source": "Wikimedia Commons · Hsbc-logo.svg",
-    "license": "public-domain"
+    "width": 315.9,
+    "height": 85,
+    "source": "kurumun web sitesi",
+    "license": "trademark"
   },
   {
     "slug": "icbc",
@@ -214,9 +214,9 @@
     "name": "ING Bank",
     "type": "bank",
     "file": "svg/ing.svg",
-    "width": 999.43,
-    "height": 152.57,
-    "source": "seeklogo (AI → SVG)",
+    "width": 761.4,
+    "height": 189.4,
+    "source": "kurumun web sitesi",
     "license": "trademark"
   },
   {
@@ -384,19 +384,19 @@
     "name": "Ziraat Bankası",
     "type": "bank",
     "file": "svg/ziraat.svg",
-    "width": 627.99,
-    "height": 132.67,
-    "source": "Wikimedia Commons · Ziraat Bankası logo.svg",
-    "license": "public-domain"
+    "width": 404.53,
+    "height": 74.82,
+    "source": "kurumun marka dosyası (PDF)",
+    "license": "trademark"
   },
   {
     "slug": "ziraatkatilim",
     "name": "Ziraat Katılım",
     "type": "bank",
     "file": "svg/ziraatkatilim.svg",
-    "width": 282.914,
-    "height": 60.517,
-    "source": "Wikimedia Commons · Ziraat Katılım Bankası Logo.svg",
-    "license": "public-domain"
+    "width": 283,
+    "height": 53,
+    "source": "kurumun web sitesi",
+    "license": "trademark"
   }
 ]

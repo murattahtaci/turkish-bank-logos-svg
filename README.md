@@ -109,9 +109,9 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `goldenglobal.svg` | Golden Global Yatırım Bankası | kurumun web sitesi | Kurumun marka varlığı |
 | `halkbank.svg` | Halkbank | Wikimedia Commons · *Halkbank logo.svg* | Kamu malı |
 | `hayatfinans.svg` | Hayat Finans Katılım | kurumun web sitesi | Kurumun marka varlığı |
-| `hsbc.svg` | HSBC | Wikimedia Commons · *Hsbc-logo.svg* | Kamu malı |
+| `hsbc.svg` | HSBC | kurumun web sitesi (2018 logosu) | Kurumun marka varlığı |
 | `icbc.svg` | ICBC Turkey | Wikimedia Commons · *ICBC China logo.svg* | Kamu malı |
-| `ing.svg` | ING Bank | seeklogo (AI → SVG) | Kurumun marka varlığı |
+| `ing.svg` | ING Bank | kurumun web sitesi | Kurumun marka varlığı |
 | `isbank.svg` | Türkiye İş Bankası | Wikimedia Commons · *Türkiye İş Bankası logo.svg* | Kamu malı |
 | `kuveytturk.svg` | Kuveyt Türk | Wikimedia Commons · *Kuveyt Türk Logo.svg* | Kamu malı |
 | `nkolay.svg` | N Kolay (Aktif Bank) | kurumun web sitesi | Kurumun marka varlığı |
@@ -124,8 +124,8 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `vakifbank.svg` | VakıfBank | Wikimedia Commons · *Vakıfbank logo.svg* | Kamu malı |
 | `vakifkatilim.svg` | Vakıf Katılım | Wikimedia Commons · *Vakıf Katılım Logo.svg* | Kamu malı |
 | `yapikredi.svg` | Yapı Kredi | kurumun web sitesi | Kurumun marka varlığı |
-| `ziraat.svg` | Ziraat Bankası | Wikimedia Commons · *Ziraat Bankası logo.svg* | Kamu malı |
-| `ziraatkatilim.svg` | Ziraat Katılım | Wikimedia Commons · *Ziraat Katılım Bankası Logo.svg* | Kamu malı |
+| `ziraat.svg` | Ziraat Bankası | kurumun marka dosyası (PDF · *zb_logo_vek.pdf*) | Kurumun marka varlığı |
+| `ziraatkatilim.svg` | Ziraat Katılım | kurumun web sitesi | Kurumun marka varlığı |
 
 ### Ödeme ve elektronik para kuruluşları (5)
 
@@ -154,6 +154,18 @@ Commons lisansları Commons API'sinden okundu (2026-09-15). "Kamu malı" olanlar
   (`bankCode` 864) döndürüyor, BIN veri tabanları ise yasal adı ("İyzi Ödeme ve
   Elektronik Para Hizmetleri A.Ş."); eşleştirici ikisini de `iyzico`'ya çevirir.
   Kaynak: [iyzico dökümanı](https://docs.iyzico.com/odeme-metotlari/api/non-3ds/non-3ds-entegrasyonu).
+
+## Teşekkür
+
+- **[Şahin Sezer Dinçer](https://www.linkedin.com/in/sahinsezerdincer)** — HSBC, ING ve
+  Ziraat Bankası logolarının eski sürüm olduğunu bildirdi. Üçü de kurumların güncel
+  dosyalarıyla değiştirildi; aynı turda Ziraat Katılım da yenilendi.
+- **[Mehmet Emin KARADAĞ](https://www.linkedin.com/in/mehmeteminkaradag)** — Tera Bank'ın
+  listeye eklenmesine katkıda bulundu.
+- **[Mehmet Utku ÖZTÜRK](https://www.linkedin.com/in/mutkuoz)** — `findBankSlug`'ın eksik
+  yazılan adlarda yanlış kurumu döndürdüğünü bildirdi ("ziraat banka" → A&T Bank, çünkü
+  "zirATBANK ası" içinde kısa anahtar geçiyor). Eşleştirme artık sıraya değil **en uzun
+  eşleşen anahtara** bakıyor.
 
 ## Katkı
 

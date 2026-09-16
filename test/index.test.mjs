@@ -59,6 +59,19 @@ const ADLAR = [
   ['GOLDEN GLOBAL YATIRIM BANKASI A.Ş.', 'goldenglobal'],
   ['TERA YATIRIM BANKASI A.Ş.', 'terabank'],
   ['TERA BANK', 'terabank'],
+  // kullanıcının elle yazdığı eksik adlar — "ziraat bank" içinde "atbank" geçiyor
+  // ve eski sıra kuralında A&T Bank dönüyordu (bildiren: Mehmet Utku ÖZTÜRK)
+  ['ziraat', 'ziraat'],
+  ['ziraat bank', 'ziraat'],
+  ['ziraat banka', 'ziraat'],
+  ['ziraat bankas', 'ziraat'],
+  ['ziraat bankası', 'ziraat'],
+  ['ziraat katılım', 'ziraatkatilim'],
+  ['A&T BANK', 'atbank'],
+  ['at bank', 'atbank'],
+  ['odea bank', 'odeabank'],
+  ['alternatif bank', 'alternatifbank'],
+  ['ABANK', 'alternatifbank'],
   // eşleşmemesi gerekenler: logo yok, adı yazılır
   ['TOSLA', 'tosla'],
   ['GETİR FİNANS', 'getirfinans'],

@@ -9,10 +9,17 @@ import logos from './logos.js';
 export { logos };
 
 /**
- * Normalleştirilmiş banka adında aranan parça -> logo. SIRA ÖNEMLİ, ilk eşleşen kazanır:
- * - katılım bankaları önce ("ziraatkatilim" "ziraat"tan, "vakifkatilim" "vakif"tan önce),
- * - başka adların İÇİNDE geçen kısa anahtarlar en sonda: "abank" → "odeABANKası",
- *   "fibABANKa", "enparABANKaş"; "atbank" → "zirATBANKası".
+ * Normalleştirilmiş banka adında aranan parça -> logo.
+ *
+ * SIRA ARTIK BELİRLEYİCİ DEĞİL: en UZUN eşleşen anahtar kazanır (eşitlikte adın
+ * başına en yakın olan). Sıraya dayanan eski kural, adın tamamı yazılmadığında
+ * yanlış bankayı veriyordu — "ziraat bank" → "ziraatbank" içinde "atbank" geçtiği
+ * için A&T Bank dönüyordu (bildiren: Mehmet Utku ÖZTÜRK, 2026-09-15). Aynı tuzak
+ * "abank" → "odeABANKası", "fibABANKa", "enparABANKaş"ta da vardı; uzunluk kuralı
+ * bunların hepsini kapatıyor.
+ *
+ * Liste yine okunabilirlik için gruplu duruyor; yeni anahtar eklerken sıraya değil
+ * ANLAMA bak: daha özel ad daha uzun anahtar demektir.
  */
 export const MATCH = [
   // katılım bankaları
@@ -31,6 +38,8 @@ export const MATCH = [
   // mevduat bankaları ve e-para kuruluşları
   ['ziraatbankasi', 'ziraat'],
   ['tcziraat', 'ziraat'],
+  ['ziraatbank', 'ziraat'], // "ziraat bank(a)" gibi eksik yazımlar
+  ['ziraat', 'ziraat'],     // tek başına "ziraat" — katılım anahtarı daha uzun olduğu için onu gölgelemez
   ['halkbank', 'halkbank'],
   ['turkiyehalkbankasi', 'halkbank'],
   ['vakifbank', 'vakifbank'],
@@ -90,10 +99,18 @@ const SLUGS = new Set(logos.map(l => l.slug));
 export function findBankSlug(name) {
   const n = normalizeBankName(name);
   if (!n) return null;
+  // En uzun eşleşme kazanır; eşitlikte adın başına yakın olan. Böylece kısa bir
+  // anahtarın uzun bir adın içine denk gelmesi (zirATBANKası) sonucu değiştirmez.
+  let en = null;
   for (const [part, slug] of MATCH) {
-    if (n.includes(part)) return SLUGS.has(slug) ? slug : null;
+    const yer = n.indexOf(part);
+    if (yer === -1) continue;
+    if (!en || part.length > en.uzunluk || (part.length === en.uzunluk && yer < en.yer)) {
+      en = { slug, uzunluk: part.length, yer };
+    }
   }
-  return null;
+  if (!en) return null;
+  return SLUGS.has(en.slug) ? en.slug : null;
 }
 
 const DEFAULT_BASE = new URL('./svg/', import.meta.url).href;
