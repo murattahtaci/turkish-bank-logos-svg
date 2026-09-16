@@ -5,6 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { findBankSlug, bankLogoUrl, normalizeBankName, logos, MATCH } from '../index.js';
+import { whiteSvg } from '../scripts/white.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -143,4 +144,22 @@ test('bank-logos.css her logo için oranlı bir sınıf taşıyor', () => {
     assert.ok(css.includes(`.bank-logo--${l.slug}{aspect-ratio:${l.width}/${l.height};background-image:url("svg/${l.slug}.svg")}`),
       `${l.slug}: CSS sınıfı yok ya da bayat — npm run build`);
   }
+});
+
+test('svg-white/ her logonun güncel beyaz sürümünü taşıyor', () => {
+  const renkli = readdirSync(join(root, 'svg')).filter(f => f.endsWith('.svg')).sort();
+  const beyaz = readdirSync(join(root, 'svg-white')).filter(f => f.endsWith('.svg')).sort();
+  assert.deepEqual(beyaz, renkli);
+  for (const f of renkli) {
+    const beklenen = whiteSvg(readFileSync(join(root, 'svg', f), 'utf8'), f);
+    assert.equal(readFileSync(join(root, 'svg-white', f), 'utf8'), beklenen, `svg-white/${f} bayat — npm run build`);
+  }
+});
+
+test('whiteSvg: kök etiketi ve viewBox korunur, içerik filtreye alınır', () => {
+  const kaynak = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><rect width="10" height="5" fill="#dc0005"/></svg>';
+  const beyaz = whiteSvg(kaynak);
+  assert.ok(beyaz.startsWith('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><defs><filter id="tbl-white" x="0" y="0" width="10" height="5"'));
+  assert.ok(beyaz.includes('<g filter="url(#tbl-white)"><rect width="10" height="5" fill="#dc0005"/></g></svg>'));
+  assert.throws(() => whiteSvg('<svg><rect/></svg>', 'x'), /viewBox yok/);
 });

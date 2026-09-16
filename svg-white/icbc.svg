@@ -1,0 +1,80 @@
+<svg viewBox="0 0 31.867834 10.543902"
+  
+  
+  
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="IBC Bank logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs><filter id="tbl-white" x="0" y="0" width="31.867834" height="10.543902" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#000" result="siyah"/><feComposite in="SourceGraphic" in2="siyah" operator="over" result="zemin"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -20 -20 -20 60 0" result="m"/><feComposite in="m" in2="SourceAlpha" operator="in"/></filter></defs><g filter="url(#tbl-white)">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.9729351"
+     inkscape:cx="119.36531"
+     inkscape:cy="32.18555"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-61.912496,-148.69583)">
+    <g
+       transform="matrix(0.04118712,0,0,0.04118712,58.595611,145.71485)"
+       id="layer1-0"
+       inkscape:label="Layer 1"
+       style="fill:#cb0202;fill-opacity:1"
+       inkscape:export-filename="C:\Users\Daijin\Pictures\logo\ICBC.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g3518"
+         transform="matrix(4.4418996,0,0,-4.4426705,731.49543,249.51027)"
+         style="fill:#cb0202;fill-opacity:1">
+        <path
+           d="M 0,0 V -4.426 H 14.363 V 8.854 H 5.529 v 4.427 h 8.834 V 26.576 H 0 v -4.43 H 9.93 V 17.709 H 1.078 V 4.426 H 9.93 V 0 Z m -25.533,11.062 c 0,13.442 10.904,24.356 24.353,24.356 13.446,0 24.352,-10.914 24.352,-24.356 0,-13.447 -10.906,-24.353 -24.352,-24.353 -13.449,0 -24.353,10.906 -24.353,24.353 m -4.461,0 c 0,15.917 12.892,28.809 28.814,28.809 15.918,0 28.819,-12.892 28.819,-28.809 0,-15.917 -12.901,-28.814 -28.819,-28.814 -15.922,0 -28.814,12.897 -28.814,28.814 m 27.76,11.096 v 4.428 H -16.615 V 13.299 h 8.812 V 8.867 h -8.812 V -4.418 H -2.234 V 0.01 h -9.955 v 4.426 h 8.851 v 13.295 h -8.851 v 4.427"
+           style="fill:#cb0202;fill-opacity:1;fill-rule:evenodd;stroke:none"
+           id="path3520" />
+      </g>
+    </g>
+    <g
+       inkscape:label="#g3632"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#201e1d;fill-opacity:1;fill-rule:evenodd;stroke:none;marker:none;enable-background:accumulate"
+       transform="matrix(0.12742072,0,0,0.12858058,83.491315,108.70511)"
+       id="g2931">
+      <path
+         d="m -99.847567,355.51842 v -0.10291 h 15.347369 c 1.402102,0 3.420214,0.22297 5.036705,1.27633 1.506437,0.98762 2.276807,2.44689 2.276807,4.33637 0,1.50501 -0.413055,2.68271 -1.222015,3.49596 -1.505009,1.49929 -4.103399,1.49643 -6.004312,1.49643 h -15.490295 v -0.0928 l 0.05568,-10.40928 z m 0,-8.23396 v -9.24586 h 14.049603 c 2.471187,0 6.613176,0 6.613176,4.87377 0,1.78657 -0.776087,3.05003 -2.305393,3.7618 -1.379234,0.64317 -3.101489,0.71034 -4.273481,0.71034 h -14.083905 z m 15.917643,26.90578 c 5.325415,0 9.343058,-1.28633 11.93859,-3.82612 2.665566,-2.60983 3.227264,-5.96429 3.227264,-8.32686 0,-5.16248 -2.169613,-8.75277 -6.451669,-10.66369 l -0.188662,-0.0785 0.178657,-0.0943 c 1.930927,-1.01049 4.487869,-3.0629 4.487869,-9.18155 0,-3.36162 -1.277756,-6.39022 -3.603159,-8.53124 -2.548366,-2.35113 -6.267295,-3.5903 -10.742301,-3.5903 l -23.193995,-0.0143 v 44.29413"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#201e1d;fill-opacity:1;fill-rule:evenodd;stroke:none;marker:none;enable-background:accumulate"
+         id="path2933" />
+      <path
+         id="path2935"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#201e1d;fill-opacity:1;fill-rule:evenodd;stroke:none;marker:none;enable-background:accumulate"
+         d="m -169.35094,374.19024 h 8.83567 v -44.2927 h -8.83567 z" />
+      <path
+         d="m -153.34183,351.66657 c 0,4.28206 0.72607,7.81804 2.21964,10.80662 1.24774,2.48976 3.00573,4.58791 5.54409,6.60746 3.94904,3.13722 9.51028,4.73084 16.5308,4.73084 h 12.09295 v -8.35973 h -11.42263 c -6.35448,0 -10.96241,-1.57218 -13.69229,-4.67653 -1.94093,-2.20106 -2.93713,-5.17391 -2.96285,-8.82996 -0.0357,-3.92188 1.07051,-7.04052 3.27729,-9.26159 2.76132,-2.7799 7.26205,-4.18772 13.37785,-4.18772 h 11.42263 v -8.29113 h -11.67132 c -3.93046,0 -7.2249,0.39448 -10.08056,1.19201 -2.84994,0.80181 -5.19249,1.99667 -7.15486,3.64889 -2.79134,2.35399 -7.48074,7.63795 -7.48074,16.62084"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#201e1d;fill-opacity:1;fill-rule:evenodd;stroke:none;marker:none;enable-background:accumulate"
+         id="path2937" />
+      <path
+         d="m -63.432938,351.66657 c 0,4.27348 0.743214,8.04672 2.219637,11.19966 1.277756,2.73274 3.140079,5.08816 5.541232,6.99479 3.711782,2.95713 8.965734,4.33065 16.530795,4.33065 h 12.748979 v -8.3583 h -12.075798 c -6.343046,0 -10.950973,-1.64079 -13.698007,-4.8752 -1.938073,-2.2768 -2.934266,-5.30826 -2.958563,-9.0129 -0.03716,-4.0305 1.107675,-7.2449 3.391628,-9.54315 2.777048,-2.79992 7.237762,-4.21917 13.264942,-4.21917 h 12.075798 v -8.28398 h -12.330206 c -3.927601,0 -7.219181,0.39019 -10.077697,1.18915 -2.84994,0.80038 -5.192493,1.98952 -7.149147,3.64317 -2.255369,1.8952 -7.483593,7.34067 -7.483593,16.93528"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#201e1d;fill-opacity:1;fill-rule:evenodd;stroke:none;marker:none;enable-background:accumulate"
+         id="path2939" />
+    </g>
+  </g>
+</g></svg>

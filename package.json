@@ -8,14 +8,16 @@
     ".": "./index.js",
     "./logos.json": "./logos.json",
     "./bank-logos.css": "./bank-logos.css",
-    "./svg/*": "./svg/*"
+    "./svg/*": "./svg/*",
+    "./svg-white/*": "./svg-white/*"
   },
   "files": [
     "index.js",
     "logos.js",
     "logos.json",
     "bank-logos.css",
-    "svg/"
+    "svg/",
+    "svg-white/"
   ],
   "scripts": {
     "build": "node scripts/build.mjs",

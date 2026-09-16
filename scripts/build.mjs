@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// logos.json + svg/  ->  logos.json (boyutlar eklenir) · logos.js · bank-logos.css
+// logos.json + svg/  ->  logos.json (boyutlar eklenir) · logos.js · bank-logos.css · svg-white/
 // Kullanım: npm run build   (bağımlılık yok, Node 18+)
-// Tek kaynak logos.json'dır; logos.js ve bank-logos.css elle düzenlenmez.
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+// Tek kaynak logos.json ve svg/'dir; logos.js, bank-logos.css ve svg-white/ elle düzenlenmez.
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { whiteSvg } from './white.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const logos = JSON.parse(readFileSync(join(root, 'logos.json'), 'utf8'));
@@ -45,4 +46,16 @@ const css = [
 ].join('\n');
 writeFileSync(join(root, 'bank-logos.css'), css);
 
-console.log(`${sonuc.length} logo · logos.json · logos.js · bank-logos.css yazıldı`);
+// Koyu zemin için düz beyaz sürümler; svg/'de artık olmayan logonun beyazı da silinir.
+const beyazDizin = join(root, 'svg-white');
+mkdirSync(beyazDizin, { recursive: true });
+const slugs = new Set(sonuc.map(l => l.slug));
+for (const f of readdirSync(beyazDizin)) {
+  if (f.endsWith('.svg') && !slugs.has(f.slice(0, -4))) rmSync(join(beyazDizin, f));
+}
+for (const l of sonuc) {
+  const svg = readFileSync(join(root, 'svg', l.slug + '.svg'), 'utf8');
+  writeFileSync(join(beyazDizin, l.slug + '.svg'), whiteSvg(svg, l.slug));
+}
+
+console.log(`${sonuc.length} logo · logos.json · logos.js · bank-logos.css · svg-white/ yazıldı`);
