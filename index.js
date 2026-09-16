@@ -29,8 +29,7 @@ export const MATCH = [
   ['terabank', 'terabank'],
   ['terayatirim', 'terabank'],
   // mevduat bankaları ve e-para kuruluşları
-  ['ziraatbankasi', 'ziraat'],
-  ['tcziraat', 'ziraat'],
+  ['ziraat', 'ziraat'],
   ['halkbank', 'halkbank'],
   ['turkiyehalkbankasi', 'halkbank'],
   ['vakifbank', 'vakifbank'],
