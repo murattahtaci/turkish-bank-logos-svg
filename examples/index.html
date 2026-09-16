@@ -3,48 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<!-- Sayfanın kendi koyu teması var; Dark Reader bu etiketi görünce kendini kapatır. -->
+<meta name="darkreader-lock">
 <title>Türkiye banka ve ödeme kuruluşu logoları — örnekler</title>
+<script>
+  // Tema, çizimden önce kurulur (açılışta beyaz parlama olmasın). Seçim yoksa sistem ayarı.
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('tema'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
 <link rel="stylesheet" href="../bank-logos.css">
 <style>
-  body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 auto;max-width:960px;padding:24px 16px;color:#1f2328}
+  :root{--zemin:#fff;--metin:#1f2328;--soluk:#57606a;--cizgi:#d0d7de;--kod:#f6f8fa;--baglanti:#0969da;--secili:#1f2328;--secili-metin:#fff;color-scheme:light}
+  :root[data-theme="dark"]{--zemin:#0d1117;--metin:#e6edf3;--soluk:#8b949e;--cizgi:#30363d;--kod:#161b22;--baglanti:#4493f8;--secili:#e6edf3;--secili-metin:#0d1117;color-scheme:dark}
+  body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 auto;max-width:960px;padding:24px 16px 300px;color:var(--metin);background:var(--zemin)}
+  header{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
   h1{font-size:24px;margin:0 0 4px} h2{font-size:18px;margin:36px 0 8px}
-  h3{font-size:14px;margin:22px 0 8px;color:#57606a;font-weight:600}
-  a{color:#0969da}
-  code,pre{font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;background:#f6f8fa;border-radius:6px}
+  h3{font-size:14px;margin:22px 0 8px;color:var(--soluk);font-weight:600}
+  a{color:var(--baglanti)}
+  code,pre{font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--kod);border-radius:6px}
   code{padding:1px 5px} pre{padding:12px;overflow:auto}
+  .tema{display:inline-flex;border:1px solid var(--cizgi);border-radius:8px;overflow:hidden;flex:none}
+  .tema button{font:inherit;font-size:13px;border:0;padding:6px 14px;background:transparent;color:var(--metin);cursor:pointer}
+  .tema button[aria-pressed="true"]{background:var(--secili);color:var(--secili-metin)}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-  .cell{border:1px solid #d0d7de;border-radius:6px;padding:14px 8px 8px;text-align:center;font-size:12px;color:#57606a}
-  .cell .bank-logo{display:block;margin:0 auto 10px;max-width:100%}
+  .cell{border:1px solid var(--cizgi);border-radius:6px;padding:14px 8px 8px;text-align:center;font-size:12px;color:var(--soluk)}
+  .cell .bank-logo{display:block;max-width:100%}
+  /* her kutuda iki görünüm: üstte açık, altta koyu zemin */
+  .ikili .cell{padding:0;overflow:hidden}
+  .ikili .serit{padding:12px 8px}
+  .ikili .serit .bank-logo{margin:0 auto}
+  .serit-acik{background:#fff}
+  .serit-koyu{background:#0d1117}
+  .ikili .etiket{padding:5px 8px 6px;border-top:1px solid var(--cizgi)}
+  .yanyana{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:520px}
+  .yanyana>div{border:1px solid var(--cizgi);border-radius:6px;padding:14px;text-align:center;font-size:12px;color:#57606a}
+  .yanyana>div.serit-koyu{color:#8b949e}
+  .yanyana img{height:24px;display:block;margin:0 auto 8px}
   .demo{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  input{font:inherit;padding:8px 10px;border:1px solid #d0d7de;border-radius:6px;width:320px;max-width:100%}
+  input{font:inherit;padding:8px 10px;border:1px solid var(--cizgi);border-radius:6px;width:320px;max-width:100%;background:var(--zemin);color:var(--metin)}
   .out{min-height:32px;display:flex;align-items:center;gap:10px}
-  .ad{font-size:12px;color:#57606a;background:#f6f8fa;border:1px solid #d0d7de;border-radius:12px;padding:2px 10px}
+  .ad{font-size:12px;color:var(--soluk);background:var(--kod);border:1px solid var(--cizgi);border-radius:12px;padding:2px 10px}
 </style>
+<style id="koyu-logolar"></style>
 </head>
 <body>
-<h1>Türkiye banka ve ödeme kuruluşu logoları — örnekler</h1>
-<p>35 banka ve 5 ödeme / elektronik para kuruluşunun orijinal SVG logoları, üç kullanım biçimiyle. Kaynaklar, lisanslar ve marka uyarısı:
+<header>
+  <div>
+    <h1>Türkiye banka ve ödeme kuruluşu logoları — örnekler</h1>
+  </div>
+  <div class="tema" role="group" aria-label="Tema">
+    <button type="button" data-tema="light">Açık</button>
+    <button type="button" data-tema="dark">Koyu</button>
+  </div>
+</header>
+<p>35 banka ve 5 ödeme / elektronik para kuruluşunun orijinal SVG logoları, üç kullanım biçimiyle; her logonun koyu zemin
+için düz beyaz bir sürümü de var. Kaynaklar, lisanslar ve marka uyarısı:
 <a href="https://github.com/murattahtaci/turkish-bank-logos-svg">github.com/murattahtaci/turkish-bank-logos-svg</a></p>
 
 <h2>1. <code>&lt;img&gt;</code></h2>
-<pre>&lt;img src="svg/garanti.svg" alt="Garanti BBVA" style="height:24px"&gt;</pre>
-<p><img src="../svg/garanti.svg" alt="Garanti BBVA" style="height:24px"></p>
+<pre>&lt;img src="svg/garanti.svg" alt="Garanti BBVA" style="height:24px"&gt;        &lt;!-- açık zemin --&gt;
+&lt;img src="svg-white/garanti.svg" alt="Garanti BBVA" style="height:24px"&gt;  &lt;!-- koyu zemin --&gt;</pre>
+<div class="yanyana">
+  <div class="serit-acik"><img src="../svg/garanti.svg" alt="Garanti BBVA">svg/</div>
+  <div class="serit-koyu"><img src="../svg-white/garanti.svg" alt="Garanti BBVA">svg-white/</div>
+</div>
 
 <h2>2. CSS sınıfı</h2>
 <pre>&lt;link rel="stylesheet" href="bank-logos.css"&gt;
-&lt;span class="bank-logo bank-logo--garanti" role="img" aria-label="Garanti BBVA"&gt;&lt;/span&gt;</pre>
-<p>Yükseklik 24 px; <code>.bank-logo{height:32px}</code> ile değişir. Genişlik logonun kendi oranından gelir.</p>
+&lt;span class="bank-logo bank-logo--garanti" role="img" aria-label="Garanti BBVA"&gt;&lt;/span&gt;
+
+/* koyu tema: sayfanızın CSS'inde, kullandığınız her logo için */
+[data-theme="dark"] .bank-logo--garanti { background-image: url("svg-white/garanti.svg"); }</pre>
+<p>Yükseklik 24 px; <code>.bank-logo{height:32px}</code> ile değişir. Genişlik logonun kendi oranından gelir.
+Her kutuda üstte açık zemin (<code>svg/</code>), altta koyu zemin (<code>svg-white/</code>).</p>
 <h3>Bankalar</h3>
-<div class="grid" id="grid-bank"></div>
+<div class="grid ikili" id="grid-bank"></div>
 <h3>Ödeme ve elektronik para kuruluşları</h3>
-<div class="grid" id="grid-payment"></div>
+<div class="grid ikili" id="grid-payment"></div>
 
 <h2>3. JS — banka adından logo</h2>
 <pre>import { findBankSlug, bankLogoUrl } from './index.js';
 
-findBankSlug('T. GARANTİ BANKASI A.Ş.');  // 'garanti'
-bankLogoUrl('T. GARANTİ BANKASI A.Ş.');   // '…/svg/garanti.svg'
-findBankSlug('BİLİNMEYEN BANKA A.Ş.');                    // null — logo yok, adı yazın</pre>
+findBankSlug('T. GARANTİ BANKASI A.Ş.');                // 'garanti'
+bankLogoUrl('T. GARANTİ BANKASI A.Ş.');                 // '…/svg/garanti.svg'
+bankLogoUrl('T. GARANTİ BANKASI A.Ş.', 'svg-white/');   // koyu tema: 'svg-white/garanti.svg'
+findBankSlug('BİLİNMEYEN BANKA A.Ş.');                  // null — logo yok, adı yazın</pre>
 <p>Ödeme sağlayıcılarının döndürdüğü banka adı biçimleriyle sınandı. Bir ad yazın:</p>
 <div class="demo">
   <input id="ad" value="ZİRAAT KATILIM BANKASI A.Ş." aria-label="Banka adı">
@@ -54,14 +102,28 @@ findBankSlug('BİLİNMEYEN BANKA A.Ş.');                    // null — logo yo
 <script type="module">
 import { logos, findBankSlug, bankLogoUrl } from '../index.js';
 
+const kok = document.documentElement;
+
+// Koyu temada CSS sınıfları beyaz dosyayı göstersin (kütüphanenin CSS'i değişmeden).
+document.getElementById('koyu-logolar').textContent = logos.map(l =>
+  `[data-theme="dark"] .bank-logo--${l.slug}, .serit-koyu .bank-logo--${l.slug}{background-image:url("../svg-white/${l.slug}.svg")}`
+  + `\n.serit-acik .bank-logo--${l.slug}{background-image:url("../svg/${l.slug}.svg")}`).join('\n');
+
+function logoSpan(l) {
+  const s = document.createElement('span');
+  s.className = 'bank-logo bank-logo--' + l.slug;
+  s.setAttribute('role', 'img');
+  s.setAttribute('aria-label', l.name);
+  return s;
+}
+
 for (const l of logos) {
   const hucre = document.createElement('div');
   hucre.className = 'cell';
-  const logo = document.createElement('span');
-  logo.className = 'bank-logo bank-logo--' + l.slug;
-  logo.setAttribute('role', 'img');
-  logo.setAttribute('aria-label', l.name);
-  hucre.append(logo, l.slug);
+  const acik = document.createElement('div'); acik.className = 'serit serit-acik'; acik.append(logoSpan(l));
+  const koyu = document.createElement('div'); koyu.className = 'serit serit-koyu'; koyu.append(logoSpan(l));
+  const etiket = document.createElement('div'); etiket.className = 'etiket'; etiket.textContent = l.slug;
+  hucre.append(acik, koyu, etiket);
   document.getElementById('grid-' + l.type).append(hucre);
 }
 
@@ -78,7 +140,7 @@ function goster() {
     return;
   }
   const img = document.createElement('img');
-  img.src = bankLogoUrl(slug);
+  img.src = kok.dataset.theme === 'dark' ? bankLogoUrl(slug, '../svg-white/') : bankLogoUrl(slug);
   img.alt = logos.find(l => l.slug === slug).name;
   img.style.height = '28px';
   const kod = document.createElement('code');
@@ -86,7 +148,16 @@ function goster() {
   out.append(img, kod);
 }
 ad.addEventListener('input', goster);
-goster();
+
+const dugmeler = document.querySelectorAll('.tema button');
+function temaUygula(t, kaydet) {
+  kok.dataset.theme = t;
+  dugmeler.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tema === t)));
+  if (kaydet) { try { localStorage.setItem('tema', t); } catch (e) {} }
+  goster();
+}
+dugmeler.forEach(b => b.addEventListener('click', () => temaUygula(b.dataset.tema, true)));
+temaUygula(kok.dataset.theme, false);
 </script>
 </body>
 </html>

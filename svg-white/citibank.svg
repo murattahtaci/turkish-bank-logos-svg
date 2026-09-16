@@ -7,7 +7,7 @@
    version="1.1"
   
   
-   id="svg4965"><defs><filter id="tbl-white" x="0" y="0" width="300.0" height="81.234291" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#000" result="siyah"/><feComposite in="SourceGraphic" in2="siyah" operator="over" result="zemin"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -20 -20 -20 60 0" result="m"/><feComposite in="m" in2="SourceAlpha" operator="in"/></filter></defs><g filter="url(#tbl-white)">
+   id="svg4965"><defs><filter id="tbl-white" x="0" y="0" width="300.0" height="81.234291" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#000" result="siyah"/><feComposite in="SourceGraphic" in2="siyah" operator="over" result="zemin"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -20 -20 -20 60 0" result="dolu"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  5 -10 5 0 -8" result="eflatun"/><feComposite in="eflatun" in2="dolu" operator="arithmetic" k1="0" k2="-0.6" k3="1" k4="0" result="m"/><feComposite in="m" in2="SourceAlpha" operator="in"/></filter></defs><g filter="url(#tbl-white)">
   <defs
      id="defs4967" />
   

@@ -5,7 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { findBankSlug, bankLogoUrl, normalizeBankName, logos, MATCH } from '../index.js';
-import { whiteSvg } from '../scripts/white.mjs';
+import { whiteSvg, tonla, TON_AYARI } from '../scripts/white.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -151,7 +151,7 @@ test('svg-white/ her logonun güncel beyaz sürümünü taşıyor', () => {
   const beyaz = readdirSync(join(root, 'svg-white')).filter(f => f.endsWith('.svg')).sort();
   assert.deepEqual(beyaz, renkli);
   for (const f of renkli) {
-    const beklenen = whiteSvg(readFileSync(join(root, 'svg', f), 'utf8'), f);
+    const beklenen = whiteSvg(readFileSync(join(root, 'svg', f), 'utf8'), f.slice(0, -4));
     assert.equal(readFileSync(join(root, 'svg-white', f), 'utf8'), beklenen, `svg-white/${f} bayat — npm run build`);
   }
 });
@@ -170,4 +170,28 @@ test('README İngilizce bölümündeki lisans sayıları logos.json ile aynı', 
   assert.ok(m, 'README\'de lisans satırı bulunamadı');
   const say = t => logos.filter(l => l.license === t).length;
   assert.deepEqual(m.slice(1).map(Number), [say('public-domain'), say('CC-BY-SA-4.0'), say('trademark')]);
+});
+
+test('ton ayarı var olan logolara uygulanmış', () => {
+  for (const slug of Object.keys(TON_AYARI)) {
+    assert.ok(logos.some(l => l.slug === slug), `${slug}: böyle bir logo yok`);
+    const kaynak = readFileSync(join(root, 'svg', slug + '.svg'), 'utf8');
+    assert.notEqual(whiteSvg(kaynak, slug), whiteSvg(kaynak, '(ayarsız)'), `${slug}: ton ayarı çıktıyı değiştirmiyor`);
+  }
+});
+
+// whiteSvg'yi çağırmadan, metnin kendisinden: kök etiketi + filtre + kaynağın TAM içeriği + kapanış.
+// (Ton ayarı konum hesabından sonra uygulanınca dosyalar ortadan kesiliyordu; aynı fonksiyonla
+// karşılaştıran test bunu görmedi.)
+test('beyaz dosya kaynağın tam içeriğini filtre sarmalıyla taşıyor', () => {
+  const ac = '<g filter="url(#tbl-white)">', kapa = '</g></svg>\n';
+  for (const l of logos) {
+    const kaynak = tonla(readFileSync(join(root, 'svg', l.slug + '.svg'), 'utf8'), l.slug);
+    const kok = /<svg\b[^>]*>/.exec(kaynak)[0];
+    const ic = kaynak.slice(kaynak.indexOf(kok) + kok.length, kaynak.lastIndexOf('</svg>'));
+    const beyaz = readFileSync(join(root, 'svg-white', l.slug + '.svg'), 'utf8');
+    assert.ok(beyaz.includes(kok + '<defs><filter id="tbl-white"'), `${l.slug}: kök etiketi bozuk`);
+    assert.ok(beyaz.endsWith(kapa), `${l.slug}: kapanış bozuk`);
+    assert.equal(beyaz.slice(beyaz.indexOf(ac) + ac.length, -kapa.length), ic, `${l.slug}: içerik kesilmiş`);
+  }
 });

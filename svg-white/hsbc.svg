@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="HSBC_MASTERBRAND_LOGO_WW_RGB"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 315.9 85"
-	 style="enable-background:new 0 0 315.9 85;" xml:space="preserve"><defs><filter id="tbl-white" x="0" y="0" width="315.9" height="85" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#000" result="siyah"/><feComposite in="SourceGraphic" in2="siyah" operator="over" result="zemin"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -20 -20 -20 60 0" result="m"/><feComposite in="m" in2="SourceAlpha" operator="in"/></filter></defs><g filter="url(#tbl-white)">
+	 style="enable-background:new 0 0 315.9 85;" xml:space="preserve"><defs><filter id="tbl-white" x="0" y="0" width="315.9" height="85" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#000" result="siyah"/><feComposite in="SourceGraphic" in2="siyah" operator="over" result="zemin"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -20 -20 -20 60 0" result="dolu"/><feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  5 -10 5 0 -8" result="eflatun"/><feComposite in="eflatun" in2="dolu" operator="arithmetic" k1="0" k2="-0.6" k3="1" k4="0" result="m"/><feComposite in="m" in2="SourceAlpha" operator="in"/></filter></defs><g filter="url(#tbl-white)">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
 	.st1{fill:#DB0011;}
