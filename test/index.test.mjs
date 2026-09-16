@@ -163,3 +163,11 @@ test('whiteSvg: kök etiketi ve viewBox korunur, içerik filtreye alınır', () 
   assert.ok(beyaz.includes('<g filter="url(#tbl-white)"><rect width="10" height="5" fill="#dc0005"/></g></svg>'));
   assert.throws(() => whiteSvg('<svg><rect/></svg>', 'x'), /viewBox yok/);
 });
+
+test('README İngilizce bölümündeki lisans sayıları logos.json ile aynı', () => {
+  const readme = readFileSync(join(root, 'README.md'), 'utf8');
+  const m = readme.match(/\*\*Licenses per file:\*\* (\d+) public domain \(Wikimedia Commons\), (\d+) CC BY-SA 4\.0\s+\(A&T Bank[^)]*\), (\d+) trademark/);
+  assert.ok(m, 'README\'de lisans satırı bulunamadı');
+  const say = t => logos.filter(l => l.license === t).length;
+  assert.deepEqual(m.slice(1).map(Number), [say('public-domain'), say('CC-BY-SA-4.0'), say('trademark')]);
+});

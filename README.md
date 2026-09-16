@@ -249,8 +249,8 @@ to show which bank a card belongs to.
   `npm install github:murattahtaci/turkish-bank-logos-svg`
 - **Live examples:** [murattahtaci.github.io/turkish-bank-logos-svg/examples](https://murattahtaci.github.io/turkish-bank-logos-svg/examples/)
 - **Machine-readable list:** [`logos.json`](logos.json)
-- **Licenses per file:** 20 public domain (Wikimedia Commons), 1 CC BY-SA 4.0
-  (A&T Bank — attribute and share alike), 19 trademark assets of the institution.
+- **Licenses per file:** 17 public domain (Wikimedia Commons), 1 CC BY-SA 4.0
+  (A&T Bank — attribute and share alike), 22 trademark assets of the institution.
 - **Contributions:** a bank or payment institution missing? Pull requests welcome.
 
 **Trademark notice:** these logos are registered trademarks of their owners.
