@@ -76,6 +76,11 @@ export const MATCH = [
   ['getirfinans', 'getirfinans'],
   ['iyzi', 'iyzico'], // iyzico'nun kendi BIN sorgusu "iyzico", BIN veri tabanları "İyzi Ödeme ve Elektronik Para…" diyor
   ['tosla', 'tosla'],
+  // Pokus, TT Ödeme ve Elektronik Para Hizmetleri A.Ş.'nin kart markası. BIN
+  // veri tabanları TÜZEL KİŞİLİĞİ döndürüyor ("TT ÖDEME VE ELEKTRONİK PARA
+  // HİZMETLERİ A.Ş."), müşteri ise yalnız markayı tanıyor; ikisi de logoya bağlı.
+  ['pokus', 'pokus'],
+  ['ttodeme', 'pokus'],
   // kısa anahtarlar EN SONDA
   ['atbank', 'atbank'],
   ['abank', 'alternatifbank'],

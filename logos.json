@@ -290,6 +290,16 @@
     "license": "trademark"
   },
   {
+    "slug": "pokus",
+    "name": "Pokus (e-para)",
+    "type": "payment",
+    "file": "svg/pokus.svg",
+    "width": 124,
+    "height": 81,
+    "source": "kurumun web sitesi (satır içi SVG)",
+    "license": "trademark"
+  },
+  {
     "slug": "qnb",
     "name": "QNB",
     "type": "bank",
