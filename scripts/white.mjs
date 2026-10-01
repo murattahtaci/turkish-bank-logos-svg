@@ -59,18 +59,19 @@ export function whiteSvg(svg, slug = 'svg') {
   if (son < kok.index + kok[0].length) throw new Error(`${slug}: </svg> yok`);
   const vb = /\bviewBox\s*=\s*["']\s*(-?[\d.]+(?:e[-+]?\d+)?)[\s,]+(-?[\d.]+(?:e[-+]?\d+)?)[\s,]+([\d.]+(?:e[-+]?\d+)?)[\s,]+([\d.]+(?:e[-+]?\d+)?)/i.exec(kok[0]);
   if (!vb) throw new Error(`${slug}: kökte viewBox yok`);
-  if (svg.includes(`id="${ID}"`)) throw new Error(`${slug}: "${ID}" kimliği dosyada zaten var`);
+  const filterId = `tbl-white-${slug}`;
+  if (svg.includes(`id="${filterId}"`)) throw new Error(`${slug}: "${filterId}" kimliği dosyada zaten var`);
   const [, x, y, w, h] = vb;
   const ac = kok.index + kok[0].length;
   return svg.slice(0, ac)
-    + `<defs><filter id="${ID}" x="${x}" y="${y}" width="${w}" height="${h}" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">`
+    + `<defs><filter id="${filterId}" x="${x}" y="${y}" width="${w}" height="${h}" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">`
     + '<feFlood flood-color="#000" result="siyah"/>'
     + '<feComposite in="SourceGraphic" in2="siyah" operator="over" result="zemin"/>'
     + '<feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -20 -20 -20 60 0" result="dolu"/>'
     + '<feColorMatrix in="zemin" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  5 -10 5 0 -8" result="eflatun"/>'
     + '<feComposite in="eflatun" in2="dolu" operator="arithmetic" k1="0" k2="-0.6" k3="1" k4="0" result="m"/>'
     + '<feComposite in="m" in2="SourceAlpha" operator="in"/>'
-    + `</filter></defs><g filter="url(#${ID})">`
+    + `</filter></defs><g filter="url(#${filterId})">`
     + svg.slice(ac, son)
     + '</g></svg>\n';
 }

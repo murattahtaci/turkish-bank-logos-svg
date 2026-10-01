@@ -96,6 +96,10 @@ const ADLAR = [
   ['TT ÖDEME VE ELEKTRONİK PARA HİZMETLERİ A.Ş.', 'pokus'],
   ['TT ÖDEME A.Ş.', 'pokus'],
   ['GETİR FİNANS', 'getirfinans'],
+  ['TROY', 'troy'],
+  ['TROY KART', 'troy'],
+  ['PAYTR ÖDEME VE ELEKTRONİK PARA KURULUŞU A.Ş.', 'paytr'],
+  ['PAYTR', 'paytr'],
   ['BİLİNMEYEN BANKA A.Ş.', null],
   ['', null],
   ['   ', null],
@@ -117,6 +121,8 @@ test('bankLogoUrl: slug, banka adı, verilen base ve eşleşmeyen ad', () => {
   assert.equal(bankLogoUrl('garanti', 'https://ornek.test/svg/'), 'https://ornek.test/svg/garanti.svg');
   assert.match(bankLogoUrl('garanti'), /\/svg\/garanti\.svg$/);
   assert.match(bankLogoUrl('TOSLA'), /\/svg\/tosla\.svg$/);
+  assert.match(bankLogoUrl('TROY'), /\/svg\/troy\.svg$/);
+  assert.match(bankLogoUrl('PAYTR'), /\/svg\/paytr\.svg$/);
   assert.equal(bankLogoUrl('BİLİNMEYEN BANKA A.Ş.'), null);
 });
 
@@ -125,11 +131,11 @@ test('her eşleme hedefinin logosu var', () => {
   for (const [parca, slug] of MATCH) assert.ok(slugs.has(slug), `${parca} → ${slug}: logo yok`);
 });
 
-test('svg/, logos.json, logos.js ve README tabloları aynı 41 logoyu anlatıyor', () => {
+test('svg/, logos.json, logos.js ve README tabloları aynı 43 logoyu anlatıyor', () => {
   const dosyalar = readdirSync(join(root, 'svg')).filter(f => f.endsWith('.svg')).map(f => f.slice(0, -4)).sort();
   const json = JSON.parse(readFileSync(join(root, 'logos.json'), 'utf8'));
   const readme = [...readFileSync(join(root, 'README.md'), 'utf8').matchAll(/^\| `([a-z0-9]+)\.svg` \|/gm)].map(m => m[1]).sort();
-  assert.equal(dosyalar.length, 41);
+  assert.equal(dosyalar.length, 43);
   assert.deepEqual(json.map(l => l.slug).sort(), dosyalar);
   assert.deepEqual(logos.map(l => l.slug).sort(), dosyalar);
   assert.deepEqual(readme, dosyalar);
@@ -139,7 +145,7 @@ test('svg/, logos.json, logos.js ve README tabloları aynı 41 logoyu anlatıyor
 
 test('her logo bir türe ait: banka ya da ödeme / e-para kuruluşu', () => {
   for (const l of logos) assert.ok(['bank', 'payment'].includes(l.type), `${l.slug}: tür yok`);
-  assert.deepEqual(logos.filter(l => l.type === 'payment').map(l => l.slug).sort(), ['getirfinans', 'ininal', 'iyzico', 'papara', 'pokus', 'tosla']);
+  assert.deepEqual(logos.filter(l => l.type === 'payment').map(l => l.slug).sort(), ['getirfinans', 'ininal', 'iyzico', 'papara', 'paytr', 'pokus', 'tosla', 'troy']);
 });
 
 test('bank-logos.css her logo için oranlı bir sınıf taşıyor', () => {
@@ -163,8 +169,8 @@ test('svg-white/ her logonun güncel beyaz sürümünü taşıyor', () => {
 test('whiteSvg: kök etiketi ve viewBox korunur, içerik filtreye alınır', () => {
   const kaynak = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><rect width="10" height="5" fill="#dc0005"/></svg>';
   const beyaz = whiteSvg(kaynak);
-  assert.ok(beyaz.startsWith('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><defs><filter id="tbl-white" x="0" y="0" width="10" height="5"'));
-  assert.ok(beyaz.includes('<g filter="url(#tbl-white)"><rect width="10" height="5" fill="#dc0005"/></g></svg>'));
+  assert.ok(beyaz.startsWith('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><defs><filter id="tbl-white-svg" x="0" y="0" width="10" height="5"'));
+  assert.ok(beyaz.includes('<g filter="url(#tbl-white-svg)"><rect width="10" height="5" fill="#dc0005"/></g></svg>'));
   assert.throws(() => whiteSvg('<svg><rect/></svg>', 'x'), /viewBox yok/);
 });
 
@@ -188,13 +194,15 @@ test('ton ayarı var olan logolara uygulanmış', () => {
 // (Ton ayarı konum hesabından sonra uygulanınca dosyalar ortadan kesiliyordu; aynı fonksiyonla
 // karşılaştıran test bunu görmedi.)
 test('beyaz dosya kaynağın tam içeriğini filtre sarmalıyla taşıyor', () => {
-  const ac = '<g filter="url(#tbl-white)">', kapa = '</g></svg>\n';
+  const kapa = '</g></svg>\n';
   for (const l of logos) {
+    const fid = `tbl-white-${l.slug}`;
+    const ac = `<g filter="url(#${fid})">`;
     const kaynak = tonla(readFileSync(join(root, 'svg', l.slug + '.svg'), 'utf8'), l.slug);
     const kok = /<svg\b[^>]*>/.exec(kaynak)[0];
     const ic = kaynak.slice(kaynak.indexOf(kok) + kok.length, kaynak.lastIndexOf('</svg>'));
     const beyaz = readFileSync(join(root, 'svg-white', l.slug + '.svg'), 'utf8');
-    assert.ok(beyaz.includes(kok + '<defs><filter id="tbl-white"'), `${l.slug}: kök etiketi bozuk`);
+    assert.ok(beyaz.includes(kok + `<defs><filter id="${fid}"`), `${l.slug}: kök etiketi bozuk`);
     assert.ok(beyaz.endsWith(kapa), `${l.slug}: kapanış bozuk`);
     assert.equal(beyaz.slice(beyaz.indexOf(ac) + ac.length, -kapa.length), ic, `${l.slug}: içerik kesilmiş`);
   }

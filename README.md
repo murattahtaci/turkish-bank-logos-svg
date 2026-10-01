@@ -2,7 +2,7 @@
 
 **Turkish bank & payment institution logos in SVG** · [English below](#english)
 
-Türkiye'deki 35 banka ve 6 ödeme / elektronik para kuruluşunun **orijinal**
+Türkiye'deki 35 banka ve 8 ödeme / elektronik para kuruluşunun **orijinal**
 logoları, SVG biçiminde. Hiçbiri elle çizilmedi: her dosya aşağıda yazan
 kaynaktan alındı, render edilip gözle doğrulandı ve web'de doğrudan
 kullanılacak şekilde normalleştirildi. (Tek istisna Freedom Bank: raster bir
@@ -11,9 +11,9 @@ logodan otomatik vektörleştirildi — bkz. not.)
 Logolar [Domainhizmetleri](https://www.domainhizmetleri.com)'nin kartla ödeme
 ekranında, kartın hangi bankaya ait olduğunu göstermek için toplandı.
 
-![Önizleme — 41 logo, açık zemin](preview.png)
+![Önizleme — 43 logo, açık zemin](preview.png)
 
-![Önizleme — 41 logo, koyu zemin (svg-white/)](preview-dark.png)
+![Önizleme — 43 logo, koyu zemin (svg-white/)](preview-dark.png)
 
 ## Kullanım
 
@@ -155,7 +155,7 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `ziraat.svg` | Ziraat Bankası | kurumun marka dosyası (PDF · *zb_logo_vek.pdf*) | Kurumun marka varlığı |
 | `ziraatkatilim.svg` | Ziraat Katılım | kurumun web sitesi | Kurumun marka varlığı |
 
-### Ödeme ve elektronik para kuruluşları (6)
+### Ödeme ve elektronik para kuruluşları (8)
 
 | Dosya | Kurum | Kaynak | Lisans |
 |---|---|---|---|
@@ -163,8 +163,10 @@ kaynak ve lisans makine tarafından okunabilir biçimde [`logos.json`](logos.jso
 | `ininal.svg` | ininal (e-para) | seeklogo (EPS → SVG) | Kurumun marka varlığı |
 | `iyzico.svg` | iyzico (ödeme ve e-para) | kurumun marka dosyası ("Beyaz Zeminde Kullanım") | Kurumun marka varlığı |
 | `papara.svg` | Papara (e-para) | seeklogo | Kurumun marka varlığı |
+| `paytr.svg` | PayTR (ödeme ve e-para) | kurumun web sitesi | Kurumun marka varlığı |
 | `pokus.svg` | Pokus (e-para) | kurumun web sitesi (satır içi SVG) | Kurumun marka varlığı |
 | `tosla.svg` | Tosla (e-para) | kurumun web sitesi | Kurumun marka varlığı |
+| `troy.svg` | TROY (ödeme yöntemi) | kurumun web sitesi (TROY Logolar) | Kurumun marka varlığı |
 
 Commons lisansları Commons API'sinden okundu (2026-09-15). "Kamu malı" olanların
 çoğu Commons'ta ayrıca **tescilli marka** olarak işaretli.
@@ -235,7 +237,7 @@ Depo ayrıca bir lisans vermez; her dosyanın lisansı yukarıdaki tabloda yazı
 
 ## English
 
-Original SVG logos of **35 banks and 6 payment / e-money institutions in Turkey**, collected
+Original SVG logos of **35 banks and 8 payment / e-money institutions in Turkey**, collected
 for the card payment screen of [Domainhizmetleri](https://www.domainhizmetleri.com)
 to show which bank a card belongs to.
 
@@ -261,7 +263,7 @@ to show which bank a card belongs to.
 - **Live examples:** [murattahtaci.github.io/turkish-bank-logos-svg/examples](https://murattahtaci.github.io/turkish-bank-logos-svg/examples/)
 - **Machine-readable list:** [`logos.json`](logos.json)
 - **Licenses per file:** 17 public domain (Wikimedia Commons), 1 CC BY-SA 4.0
-  (A&T Bank — attribute and share alike), 23 trademark assets of the institution.
+  (A&T Bank — attribute and share alike), 25 trademark assets of the institution.
 - **Contributions:** a bank or payment institution missing? Pull requests welcome.
 
 **Trademark notice:** these logos are registered trademarks of their owners.

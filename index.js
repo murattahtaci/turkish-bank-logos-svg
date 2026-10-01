@@ -81,6 +81,10 @@ export const MATCH = [
   // HİZMETLERİ A.Ş."), müşteri ise yalnız markayı tanıyor; ikisi de logoya bağlı.
   ['pokus', 'pokus'],
   ['ttodeme', 'pokus'],
+  ['troykart', 'troy'],
+  ['troy', 'troy'],
+  ['paytrodeme', 'paytr'],
+  ['paytr', 'paytr'],
   // kısa anahtarlar EN SONDA
   ['atbank', 'atbank'],
   ['abank', 'alternatifbank'],
